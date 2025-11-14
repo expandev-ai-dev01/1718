@@ -1,20 +1,12 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { ErrorBoundaryProps, ErrorBoundaryState } from './types';
 
-interface Props {
-  children: ReactNode;
-  fallback?: ReactNode;
-}
-
-interface State {
-  hasError: boolean;
-}
-
-export class ErrorBoundary extends Component<Props, State> {
-  public state: State = {
+export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  public state: ErrorBoundaryState = {
     hasError: false,
   };
 
-  public static getDerivedStateFromError(_: Error): State {
+  public static getDerivedStateFromError(_: Error): ErrorBoundaryState {
     return { hasError: true };
   }
 
@@ -24,7 +16,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
-      return this.props.fallback || <h1>Sorry.. there was an error.</h1>;
+      return this.props.fallback || <h1>Sorry.. there was an error</h1>;
     }
 
     return this.props.children;

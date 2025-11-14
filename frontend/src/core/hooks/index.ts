@@ -1,1 +1,1 @@
-// This directory will hold generic reusable hooks.
+// This file will export all core hooks

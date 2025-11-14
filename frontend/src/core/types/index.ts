@@ -1,1 +1,1 @@
-// This file will hold global application types.
+// This file will export all core types

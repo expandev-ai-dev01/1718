@@ -43,7 +43,7 @@ node_modules/
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
-web_modules/
+web_modules
 
 # TypeScript cache
 *.tsbuildinfo
@@ -88,40 +88,23 @@ out
 .nuxt
 dist
 
-# SvelteKit build output
+# Svelte build output
 .svelte-kit
+
+# Remix build output
+.cache/
+build/
+public/build/
 
 # Docusaurus build output
 .docusaurus
 
-# Gatsby build output
+# Gatsby files
 .cache/
 public
 
-# vuepress build output
-.vuepress/dist
+# Mac files
+.DS_Store
 
-# Serverless directories
-.serverless/
-
-# FuseBox cache
-.fusebox/
-
-# DynamoDB Local files
-.dynamodb/
-
-# TernJS port file
-.tern-port
-
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
-
-# yarn v2
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
-
-# Vite build output
+# Vite files
 dist

@@ -1,1 +1,1 @@
-export { LoadingSpinner } from './main';
+export * from './main';

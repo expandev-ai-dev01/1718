@@ -3,18 +3,17 @@ import { Outlet } from 'react-router-dom';
 export const AppLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="border-b">
-        <div className="container mx-auto p-4 flex justify-between items-center">
+      <header className="bg-pink-500 text-white p-4 shadow-md">
+        <div className="container mx-auto">
           <h1 className="text-2xl font-bold">LoveCakes</h1>
-          <nav>{/* Navigation links will go here */}</nav>
         </div>
       </header>
       <main className="flex-grow container mx-auto p-4">
         <Outlet />
       </main>
-      <footer className="border-t py-4">
-        <div className="container mx-auto text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} LoveCakes. All rights reserved.</p>
+      <footer className="bg-gray-200 p-4 text-center text-sm text-gray-600">
+        <div className="container mx-auto">
+          © {new Date().getFullYear()} LoveCakes. All rights reserved.
         </div>
       </footer>
     </div>

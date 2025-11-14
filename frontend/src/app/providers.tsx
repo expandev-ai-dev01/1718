@@ -1,15 +1,20 @@
-import { QueryClientProvider } from '@tanstack/react-query';
-import { queryClient } from '@/core/lib/queryClient';
+import React from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/core/components/ErrorBoundary';
 
-interface AppProvidersProps {
-  children: React.ReactNode;
-}
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
-export function AppProviders({ children }: AppProvidersProps) {
+export const AppProviders = ({ children }: { children: React.ReactNode }) => {
   return (
     <ErrorBoundary fallback={<div>Something went wrong at the root level.</div>}>
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </ErrorBoundary>
   );
-}
+};

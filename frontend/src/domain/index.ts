@@ -1,1 +1,1 @@
-// This directory will hold business functional domains.
+// This file will export all domain modules

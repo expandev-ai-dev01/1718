@@ -1,1 +1,1 @@
-// This directory will hold global state stores.
+// This file will export all core stores
