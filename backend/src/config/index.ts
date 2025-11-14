@@ -12,6 +12,11 @@ export const config = {
       encrypt: process.env.DB_ENCRYPT === 'true',
       trustServerCertificate: process.env.NODE_ENV !== 'production',
     },
+    pool: {
+      max: 10,
+      min: 0,
+      idleTimeoutMillis: 30000,
+    },
   },
   api: {
     port: parseInt(process.env.PORT || '3001', 10),
